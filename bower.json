@@ -1,0 +1,18 @@
+{
+  "name": "colors",
+  "version": "",
+  "description": "colors",
+  "ignore": [
+    "node_modules"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "angular": "<= 1.3",
+    "angular-animate": "<= 1.3",
+    "normalize.css": "3.0.2",
+    "angular-ui-router": "0.2.13",
+    "compass-mixins": "1.0.2",
+    "jquery": "~1.11.1",
+    "visionmedia-debug": "visionmedia/debug#2.1.0"
+  }
+}
