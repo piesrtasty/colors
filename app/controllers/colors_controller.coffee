@@ -1,7 +1,7 @@
 angular.module( 'app' ).controller
   colorsController: ($rootScope, $scope, $location) ->
     
-  	$scope.selectColor = ($event) ->
+    $scope.selectColor = ($event) ->
       @img = $event.target
       @canvas = $('<canvas />')[0]
       @canvas.width = @img.width
