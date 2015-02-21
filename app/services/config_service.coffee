@@ -1,4 +1,5 @@
 angular.module( 'app' ).factory 'configService', () ->
+  
   load_config: (config)->
     @_config ||= {}
     for k,v of config
