@@ -6,7 +6,7 @@
   %body{ ng-app: 'app', ng-init:"test='xxx'" }
     != @body
 
-  -# != css( 'application' )
+  != css( 'application' )
   -# != css( 'fonts' )
   != js( 'bower' )
   != js( 'application' )

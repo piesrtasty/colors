@@ -1,0 +1,83 @@
+
+//= require normalize.css/normalize
+
+@import "mixins";
+@import "vars";
+
+$inner_width: 980px;
+
+* {
+  @include box-sizing(border-box);
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* -------------------------- */
+/*         Page Layout
+/* -------------------------- */
+
+.wrapper {
+  background-color: #C5FAFF;
+  overflow: auto;
+  height: 100vh;
+  min-height: 690px;
+  margin: 0;
+  position: relative;
+  z-index: 0;
+
+  .container {
+    width: $inner_width;
+    margin: 0 auto;
+  }
+}
+
+/* -------------------------- */
+/*         Color Wheel
+/* -------------------------- */
+
+.colorwheel {
+	width: 200px;
+
+  img {
+    @include border-radius(50%);
+    width: 100%;
+  }
+
+}
+
+.colorbox {
+  height: 200px;
+  width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

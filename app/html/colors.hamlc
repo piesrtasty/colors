@@ -1,1 +1,8 @@
-%h1 Colors
+%section.wrapper
+
+  %h1 Colors
+
+  .colorwheel
+    %img{ src: "/color_wheel.webp", ng-click: "selectColor($event)"}
+
+  .colorbox{ ng-style: "{'background-color': pickedColor}" }
