@@ -15,17 +15,17 @@ fs = require 'fs'
 
 # Assets
 asset_config =
-	paths: [
-    'app/fonts',
-    'app/images',
-    'app/modules',
-    'app/directives',
-    'app/controllers',
-    'app/services',
-    'app/html',
-    'app/javascripts',
-    'app/css',
-    'server/public/bower',
+  paths: [
+    'app/fonts'
+    'app/images'
+    'app/modules'
+    'app/directives'
+    'app/controllers'
+    'app/services'
+    'app/html'
+    'app/javascripts'
+    'app/css'
+    'server/public/bower'
     'app/vendor/javascripts'
   ]
   servePath: process.env.ASSETS_PATH
