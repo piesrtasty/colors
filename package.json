@@ -6,6 +6,9 @@
     "type": "git",
     "url": ""
   },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
   "dependencies": {
     "coffee-script": "*",
     "bower": "*",
