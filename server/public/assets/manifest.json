@@ -1,0 +1,73 @@
+{
+  "assets": {
+    "application.js": "application-a892f081df44380b4623b7c58b3e9430.js",
+    "bower.js": "bower-cdb5c43c9b870726cd38b3140c19645b.js",
+    "app_module.js": "app_module-0892b3e49ba1437a68b9ec6c734e0521.js",
+    "colors_controller.js": "colors_controller-9cc65d2feebb0e567430884657f18e1d.js",
+    "config_controller.js": "config_controller-de00bb6d5cbcb93aa75a873ef8baa8a0.js",
+    "config_service.js": "config_service-f1da89f316d2680354e3e57a663f0048.js",
+    "colors.hamlc": "colors-54331a8d32dd9b98b6e438d24ec60f54.hamlc"
+  },
+  "files": {
+    "application-58353abf019832149a959b9309fd75cc.js": {
+      "logical_path": "application.js",
+      "mtime": "2015-02-21T02:18:37.000Z",
+      "size": 3,
+      "digest": "58353abf019832149a959b9309fd75cc"
+    },
+    "bower-cdb5c43c9b870726cd38b3140c19645b.js": {
+      "logical_path": "bower.js",
+      "mtime": "2015-02-21T02:18:02.000Z",
+      "size": 1307976,
+      "digest": "cdb5c43c9b870726cd38b3140c19645b"
+    },
+    "app_module-0892b3e49ba1437a68b9ec6c734e0521.js": {
+      "logical_path": "app_module.js",
+      "mtime": "2015-02-21T04:17:07.000Z",
+      "size": 429,
+      "digest": "0892b3e49ba1437a68b9ec6c734e0521"
+    },
+    "colors_controller-9cc65d2feebb0e567430884657f18e1d.js": {
+      "logical_path": "colors_controller.js",
+      "mtime": "2015-02-21T04:07:31.000Z",
+      "size": 149,
+      "digest": "9cc65d2feebb0e567430884657f18e1d"
+    },
+    "config_controller-de00bb6d5cbcb93aa75a873ef8baa8a0.js": {
+      "logical_path": "config_controller.js",
+      "mtime": "2015-02-21T04:18:25.000Z",
+      "size": 195,
+      "digest": "de00bb6d5cbcb93aa75a873ef8baa8a0"
+    },
+    "config_service-f1da89f316d2680354e3e57a663f0048.js": {
+      "logical_path": "config_service.js",
+      "mtime": "2015-02-21T04:19:15.000Z",
+      "size": 1127,
+      "digest": "f1da89f316d2680354e3e57a663f0048"
+    },
+    "colors-ed3dc06c47e5386742cdf5dc04c321f7.hamlc": {
+      "logical_path": "colors.hamlc",
+      "mtime": "2015-02-21T04:23:23.000Z",
+      "size": 8,
+      "digest": "ed3dc06c47e5386742cdf5dc04c321f7"
+    },
+    "application-a892f081df44380b4623b7c58b3e9430.js": {
+      "logical_path": "application.js",
+      "mtime": "2015-02-21T04:19:15.000Z",
+      "size": 1903,
+      "digest": "a892f081df44380b4623b7c58b3e9430"
+    },
+    "colors-3f8b8bb15ff05ab9347483f8d23eefd9.hamlc": {
+      "logical_path": "colors.hamlc",
+      "mtime": "2015-02-21T04:28:25.000Z",
+      "size": 9,
+      "digest": "3f8b8bb15ff05ab9347483f8d23eefd9"
+    },
+    "colors-54331a8d32dd9b98b6e438d24ec60f54.hamlc": {
+      "logical_path": "colors.hamlc",
+      "mtime": "2015-02-21T04:32:09.000Z",
+      "size": 9,
+      "digest": "54331a8d32dd9b98b6e438d24ec60f54"
+    }
+  }
+}

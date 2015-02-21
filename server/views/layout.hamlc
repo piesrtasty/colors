@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Colors
+    
+  %body{ ng-app: 'app', ng-init:"test='xxx'" }
+    != @body
+
+  -# != css( 'application' )
+  -# != css( 'fonts' )
+  != js( 'bower' )
+  != js( 'application' )
+  -# %script{ src: '/socket.io/socket.io.js' }
+  - unless process.env.NODE_ENV is 'production'
+    %script{ src: "//localhost:35729/livereload.js" }

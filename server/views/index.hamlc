@@ -1,0 +1,3 @@
+- init_vars = "init( #{JSON.stringify(@config)} )"
+%div.init{ ng-controller: 'configController', ng-init: init_vars  }
+%div{ ui-view: true }
