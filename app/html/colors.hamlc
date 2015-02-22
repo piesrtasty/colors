@@ -8,15 +8,20 @@
       COLOR RULE
     .color-rules
       .color-rule{ ng-click: "pickColorRule('analogous')" }
-        ANALOGOUS
+        .color-rule-selected
+        .color-rule-name ANALOGOUS
       .color-rule{ ng-click: "pickColorRule('monochromatic')" }
-        MONOCHROMATIC
+        .color-rule-selected
+        .color-rule-name MONOCHROMATIC
       .color-rule{ ng-click: "pickColorRule('triad')" }
-        TRIAD
+        .color-rule-selected
+        .color-rule-name TRIAD
       .color-rule{ ng-click: "pickColorRule('tetrad')" }
-        TETRAD
+        .color-rule-selected
+        .color-rule-name TETRAD
       .color-rule{ ng-click: "pickColorRule('split complement')" }
-        SPLIT COMPLEMENT
+        .color-rule-selected
+        .color-rule-name SPLIT COMPLEMENT
 
     .color-wheel
       %img{ src: "/color_wheel.png", ng-click: "pickColor($event)"}
@@ -24,4 +29,13 @@
     .color-box
       .color{ ng-repeat: "color in colors" }
         .color-swatch{ ng-style: "{'background-color': color.hex}" }
+        .color-details
+          .color-rgb 
+            %span.color-detail-label RGB 
+            %span.color-detail-value {{color.red}} {{color.green}} {{color.blue}}
+          .color-hex 
+            %span.color-detail-label HEX
+            %span.color-detail-value {{color.hex}}
+           
+        
       

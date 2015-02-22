@@ -26,11 +26,11 @@ angular.module( 'app' ).controller
         when 'monochromatic'
           colors = tinycolor(pickedColorHex).monochromatic(results = 5)
         when 'triad'
-          console.log 'triad'
+          colors = tinycolor(pickedColorHex).triad()
         when 'tetrad'
-          console.log 'tetrad'
+          colors = tinycolor(pickedColorHex).tetrad()
         when 'split complement'
-          console.log 'splitcomplement'
+          colors = tinycolor(pickedColorHex).splitcomplement()
           
       $scope.colors = colors.map (color) ->
         rgb = color.toRgb()
@@ -40,10 +40,8 @@ angular.module( 'app' ).controller
         blue: rgb.b
         alpha: rgb.a
       
-
-
-      
-
-
-    $scope.pickedColor = 'rgba(0, 0, 0, 0)'
+    $scope.pickedColor = 'rgba(252, 211, 66, 0)'
     $scope.colorRule = 'analogous'
+
+    setRelatedColors()
+
