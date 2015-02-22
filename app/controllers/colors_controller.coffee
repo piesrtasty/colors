@@ -1,6 +1,9 @@
 angular.module( 'app' ).controller
   colorsController: ($rootScope, $scope, $location) ->
     
+    $scope.toggleMenu = () ->
+      $scope.menuOpen = !$scope.menuOpen
+
     $scope.pickColorRule = (colorRule) ->
       $scope.colorRule = colorRule
       setRelatedColors()
@@ -46,6 +49,7 @@ angular.module( 'app' ).controller
         blue: rgb.b
         alpha: rgb.a
       
+    $scope.menuOpen = false
     $scope.pickedColor = 'rgba(252, 211, 66, 0)'
     $scope.colorRule = 'analogous'
 

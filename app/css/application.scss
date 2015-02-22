@@ -8,6 +8,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 
 $inner_width: 980px;
+$site_menu_width: 300px;
 
 * {
   @include box-sizing(border-box);
@@ -38,21 +39,72 @@ $inner_width: 980px;
 }
 
 /* -------------------------- */
+/*         Off Canvas Layout
+/* -------------------------- */
+
+.site-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 5000px; /* Temp: Simulates a tall page. */  
+}
+
+.site-canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  padding: 5% 0; /* Temp: Just spacing. */
+}
+
+.site-menu {
+  background-color: #525252;
+  width: $site_menu_width;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  // left: -300px;
+  right: -$site_menu_width;
+  padding: 15px;
+}
+
+.site-wrapper.show-nav .site-canvas {
+  -webkit-transform: translateX(-$site_menu_width);
+  transform: translateX(-$site_menu_width);
+}
+
+/* -------------------------- */
+/*         Off Canvas Menu
+/* -------------------------- */
+
+.open-menu  {
+  position: absolute;
+  cursor: pointer;
+  font-size: 30px;
+  color: #525252;
+  top: 15px;
+  right: 15px;
+}
+
+/* -------------------------- */
 /*         Page Layout
 /* -------------------------- */
 
 .wrapper {
   background-color: #EEEEEE;
-  overflow: auto;
-  height: 100vh;
-  min-height: 690px;
-  margin: 0;
+  // overflow: auto;
+  // height: 100vh;
+  // min-height: 690px;
+  // margin: 0;
   position: relative;
-  z-index: 0;
+  // z-index: 0;
 
   .container {
     width: $inner_width;
-    position: relative;
+    // position: relative;
     margin: 0 auto;
   }
 }
@@ -85,6 +137,11 @@ $inner_width: 980px;
     cursor: pointer;
   }
 
+}
+
+.color-rules-container  {
+  width: 980px;
+  margin: 0 auto;
 }
 
 .selected-color {
@@ -187,6 +244,7 @@ $inner_width: 980px;
 // top right bottom left
 
 // border-radius:top-left top-right bottom-right bottom-left
+
 
 
 
