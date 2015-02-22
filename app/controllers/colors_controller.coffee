@@ -6,6 +6,9 @@ angular.module( 'app' ).controller
       setRelatedColors()
 
     $scope.pickColor = ($event) ->
+      console.log $event
+      $('.selected-color').css('top', $event.offsetY)
+      $('.selected-color').css('left', $event.offsetX)
       @img = $event.target
       @canvas = $('<canvas />')[0]
       @canvas.width = @img.width
@@ -14,6 +17,9 @@ angular.module( 'app' ).controller
       pixelData = @canvas.getContext('2d').getImageData($event.offsetX, $event.offsetY, 1, 1).data
       $scope.pickedColor = "rgba(#{pixelData[0]}, #{pixelData[1]}, #{pixelData[2]}, #{pixelData[3]})"
       setRelatedColors($scope.pickedColor)
+
+      $scope.selectedColorOffsetY = ''
+      $scope.selectedColorOffsetX = ''
 
 
     setRelatedColors = () ->

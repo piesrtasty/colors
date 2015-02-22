@@ -74,13 +74,28 @@ $inner_width: 980px;
 
 .color-wheel {
 
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
   img {
     @include border-radius(50%);
     display: block;
     width: 350px;
     margin: 0 auto;
+    cursor: pointer;
   }
 
+}
+
+.selected-color {
+  @include border-radius(50%);
+  height: 25px;
+  width: 25px;
+  border: 3px solid #FFFFFF;
+  opacity: .7;
+  position: absolute;
+  top: 50px;
+  left: 75px;
 }
 
 .color-box {
@@ -118,6 +133,11 @@ $inner_width: 980px;
 
 .color-details {
   text-align: left;
+  padding: 10px 0 0 20px;
+}
+
+.color-detail-rgb {
+  padding-bottom: 5px;
 }
 
 .color-detail-label {
@@ -127,6 +147,8 @@ $inner_width: 980px;
 
 .color-detail-value {
   color: #FFFFFF;
+  padding-left: 7px;
+  font-size: 14px;
 }
 
 .color-rules-header {
@@ -156,8 +178,11 @@ $inner_width: 980px;
 .color-rule-name  {
   font-size: 12px;
   color: #ACACAC;
+  cursor: pointer;
 }
-
+.selected-color-rule {
+  color: #3F3F3F;
+}
 
 // top right bottom left
 
