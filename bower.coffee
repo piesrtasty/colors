@@ -13,6 +13,7 @@ bower_json =
     'angular-ui-router':   '0.2.13'
     'compass-mixins':      '1.0.2'
     'jquery':              '~1.11.1'
+    "tinycolor":           '*'
     "visionmedia-debug":   "visionmedia/debug#2.1.0"
     # 'ng-modal': '*'
     # 'angular-route': '<= 1.3'

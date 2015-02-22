@@ -36,7 +36,7 @@ $inner_width: 980px;
 /* -------------------------- */
 
 .wrapper {
-  background-color: #C5FAFF;
+  background-color: #EEEEEE;
   overflow: auto;
   height: 100vh;
   min-height: 690px;
@@ -46,35 +46,81 @@ $inner_width: 980px;
 
   .container {
     width: $inner_width;
+    position: relative;
     margin: 0 auto;
   }
+}
+
+.header {
+  text-align: center;
+  overflow: auto;
+  margin-top: 20vh;
+
+  @media screen and (max-height: 780px) {
+    margin-top: 60px;
+  }
+
 }
 
 /* -------------------------- */
 /*         Color Wheel
 /* -------------------------- */
 
-.colorwheel {
-	width: 200px;
+.color-wheel {
 
   img {
     @include border-radius(50%);
-    width: 100%;
+    display: block;
+    width: 300px;
+    margin: 0 auto;
   }
 
 }
 
-.colorbox {
+.color-box {
   height: 200px;
-  width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  border: 2px solid #B6B6B6;
+  position: relative;
+  display: inline-block;
+}
+
+.color {
+  width: 20%;
+  height: 100%;
+  display: inline-block;
+}
+
+.color-swatch {
+  height: 100%;
+  width: 100%;
+}
+
+.color-rules-header {
+  height: 40px;
+  background-color: #E2E2E2;
+  @include border-radius(10px 10px 0 0);
+  width: 150px;
+  position: absolute;
+}
+
+.color-rules  {
+  background-color: #E2E2E2;
+  @include border-radius(0 0 10px 10px);
+  width: 150px;
+  position: absolute;
+  top: 60px;
+}
+
+.color-rule {
+  padding: 10px 0 10px 40px;
 }
 
 
+// top right bottom left
 
-
-
-
-
+// border-radius:top-left top-right bottom-right bottom-left
 
 
 
