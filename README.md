@@ -4,6 +4,8 @@ A color picker built with angular, node.js, and localStorage to save data.
 
 Allows you to save color palettes based on different color rules.
 
+[Demo](https://colorsamplr.herokuapp.com/)
+
 ## Build & development
 
 Run 'npm install' to install node packages.
