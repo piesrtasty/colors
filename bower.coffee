@@ -14,6 +14,7 @@ bower_json =
     'compass-mixins':      '1.0.2'
     'jquery':              '~1.11.1'
     "tinycolor":           '*'
+    "angular-local-storage": "*"
     "visionmedia-debug":   "visionmedia/debug#2.1.0"
     # 'ng-modal': '*'
     # 'angular-route': '<= 1.3'

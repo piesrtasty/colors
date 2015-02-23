@@ -8,7 +8,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 
 $inner_width: 980px;
-$site_menu_width: 300px;
+$site_menu_width: 250px;
 
 * {
   @include box-sizing(border-box);
@@ -43,10 +43,11 @@ $site_menu_width: 300px;
 /* -------------------------- */
 
 .site-wrapper {
-  position: relative;
+  position: absolute;
   overflow: hidden;
   width: 100%;
-  height: 5000px; /* Temp: Simulates a tall page. */  
+  height: 100%;
+  // height: 5000px; /* Temp: Simulates a tall page. */  
 }
 
 .site-canvas {
@@ -57,7 +58,7 @@ $site_menu_width: 300px;
   transform: translateX(0);
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
-  padding: 5% 0; /* Temp: Just spacing. */
+  // padding: 5% 0; /* Temp: Just spacing. */
 }
 
 .site-menu {
@@ -66,9 +67,52 @@ $site_menu_width: 300px;
   height: 100%;
   position: absolute;
   top: 0;
-  // left: -300px;
   right: -$site_menu_width;
-  padding: 15px;
+}
+
+.site-menu-header {
+  width: 100%;
+  font-size: 22px;
+  font-weight: 100;
+  color: #FAFAFA;
+  text-align: center;
+  padding: 15px 0 0px 0;
+}
+
+.palette:first-child {
+  margin-top: 10px;
+}
+
+.clear-palettes {
+  font-size: 16px;
+  font-weight: 100;
+  color: #E2E2E2;
+  cursor: pointer;
+  margin: 3px 0 10px 0;
+  transform: scale(1);
+  transition-duration: 0.2s;
+  transition-property: color, transform;
+  transition-timing-function: linear;
+}
+
+.clear-palettes:hover {
+  color: #FFFFFF;
+  transform: scale(1.1)
+}
+
+
+
+.palette {
+  text-align: left;
+  padding: 10px 0 5px 20px;
+}
+
+.saved-color {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  // padding: 5px;
+  // margin-left: 10px;
 }
 
 .site-wrapper.show-nav .site-canvas {
@@ -85,8 +129,8 @@ $site_menu_width: 300px;
   cursor: pointer;
   font-size: 30px;
   color: #525252;
-  top: 15px;
-  right: 15px;
+  top: 10px;
+  right: 20px;
 }
 
 /* -------------------------- */
@@ -110,14 +154,49 @@ $site_menu_width: 300px;
 }
 
 .header {
+  width: 100%;
   text-align: center;
-  overflow: auto;
-  margin-top: 20vh;
+  // width: 100%;
+  margin: 0 auto;
+  padding: 40px 0 20px 0;
+  
+  // overflow: auto;
+  // margin-top: 20vh;
 
-  @media screen and (max-height: 780px) {
-    margin-top: 60px;
-  }
+  // @media screen and (max-height: 780px) {
+  //   margin-top: 60px;
+  // }
 
+}
+
+.save-palette {
+  // font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  cursor: pointer;
+  // color: #ACACAC;
+  color: #444444;
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  // transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
 /* -------------------------- */
@@ -125,10 +204,10 @@ $site_menu_width: 300px;
 /* -------------------------- */
 
 .color-wheel {
-
   position: relative;
   width: 350px;
   margin: 0 auto;
+  margin-top: 40px;
   img {
     @include border-radius(50%);
     display: block;
@@ -141,6 +220,7 @@ $site_menu_width: 300px;
 
 .color-rules-container  {
   width: 980px;
+  position: relative;
   margin: 0 auto;
 }
 
@@ -171,6 +251,7 @@ $site_menu_width: 300px;
   width: 175px;
   height: 100%;
   display: inline-block;
+  position: relative;
   background-color: #B6B6B6;
   border-top: 3px solid #B6B6B6;
 }
@@ -186,6 +267,7 @@ $site_menu_width: 300px;
 .color-swatch {
   height: 70%;
   width: 100%;
+  transition: background-color 1000ms linear;
 }
 
 .color-details {
@@ -214,8 +296,10 @@ $site_menu_width: 300px;
   @include border-radius(10px 10px 0 0);
   width: 175px;
   position: absolute;
+  top: 10px;
   text-align: center;
   font-size: 16px;
+  font-weight: 400;
   color: #444444;
   padding: 10px 0 10px 0;
 }
@@ -225,7 +309,7 @@ $site_menu_width: 300px;
   @include border-radius(0 0 10px 10px);
   width: 175px;
   position: absolute;
-  top: 60px;
+  top: 50px;
 }
 
 .color-rule {
@@ -236,7 +320,16 @@ $site_menu_width: 300px;
   font-size: 12px;
   color: #ACACAC;
   cursor: pointer;
+    // -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.2s;
+  transition-property: color;
+  transition-timing-function: linear;
 }
+
+.color-rule-name:hover {
+  color: #3F3F3F;
+}
+
 .selected-color-rule {
   color: #3F3F3F;
 }
