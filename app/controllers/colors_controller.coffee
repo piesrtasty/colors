@@ -36,7 +36,6 @@ angular.module( 'app' ).controller
       @canvas.height = @img.height
       @canvas.getContext('2d').drawImage @img, 0, 0, @img.width, @img.height
       pixelData = @canvas.getContext('2d').getImageData($event.offsetX, $event.offsetY, 1, 1).data
-      console.log pixelData
       $scope.pickedColor = "rgba(#{pixelData[0]}, #{pixelData[1]}, #{pixelData[2]}, #{pixelData[3]})"
       setRelatedColors($scope.pickedColor)
       $('.selected-color-circle').css('top', $event.offsetY - 12)
