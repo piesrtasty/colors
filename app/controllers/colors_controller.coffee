@@ -9,7 +9,6 @@ angular.module( 'app' ).controller
       if $localStorage.getObject('palettes') is null then $localStorage.set('palettes', '[]')
       getPalettes()
 
-
     $scope.savePalette = () ->
       $scope.palettes.push $scope.colors
       $localStorage.setObject('palettes', $scope.palettes)
