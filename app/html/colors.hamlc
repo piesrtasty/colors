@@ -33,9 +33,9 @@
 
       .color-wheel
 
-        .selected-color
-
+        .selected-color-circle
         %img{ src: "/color_wheel.png", ng-click: "pickColor($event)"}
+        -# %img{ src: "/color_wheel_old.webp", ng-click: "pickColor($event)"}
 
       .color-box
         .color{ ng-repeat: "color in colors" }
@@ -54,5 +54,4 @@
         .clear-palettes{ ng-click: "clearPalettes()", ng-show: "palettes.length" } clear
         .palette{ ng-repeat: "palette in palettes track by $index" }
           .saved-color{ ng-repeat: "color in palette", ng-style: "{'background-color': color.hex}"}
-            -# .saved-color{ ng-style: "{'background-color': color.hex}" }
             

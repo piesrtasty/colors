@@ -11,7 +11,6 @@ $site_menu_width: 250px;
 
 * {
   @include box-sizing(border-box);
-  // font-family: 'Montserrat', sans-serif;
   font-family: 'Lato';
   font-weight: 300;
 }
@@ -136,16 +135,10 @@ $site_menu_width: 250px;
 
 .wrapper {
   background-color: #EEEEEE;
-  // overflow: auto;
-  // height: 100vh;
-  // min-height: 690px;
-  // margin: 0;
   position: relative;
-  // z-index: 0;
 
   .container {
     width: $inner_width;
-    // position: relative;
     margin: 0 auto;
   }
 }
@@ -153,25 +146,14 @@ $site_menu_width: 250px;
 .header {
   width: 100%;
   text-align: center;
-  // width: 100%;
   margin: 0 auto;
   padding: 40px 0 20px 0;
-  
-  // overflow: auto;
-  // margin-top: 20vh;
-
-  // @media screen and (max-height: 780px) {
-  //   margin-top: 60px;
-  // }
-
 }
 
 .save-palette {
-  // font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   font-weight: 300;
   cursor: pointer;
-  // color: #ACACAC;
   color: #444444;
 }
 
@@ -200,6 +182,12 @@ $site_menu_width: 250px;
 /*         Color Wheel
 /* -------------------------- */
 
+.color-rules-container  {
+  width: 980px;
+  position: relative;
+  margin: 0 auto;
+}
+
 .color-wheel {
   position: relative;
   width: 350px;
@@ -207,6 +195,7 @@ $site_menu_width: 250px;
   margin-top: 40px;
   img {
     @include border-radius(50%);
+    // border: 3px solid #B6B6B6;
     display: block;
     width: 350px;
     margin: 0 auto;
@@ -215,13 +204,7 @@ $site_menu_width: 250px;
 
 }
 
-.color-rules-container  {
-  width: 980px;
-  position: relative;
-  margin: 0 auto;
-}
-
-.selected-color {
+.selected-color-circle {
   @include border-radius(50%);
   height: 25px;
   width: 25px;
@@ -232,13 +215,14 @@ $site_menu_width: 250px;
   left: 75px;
 }
 
+/* -------------------------- */
+/*    Related Color Palette
+/* -------------------------- */
+
 .color-box {
   height: 225px;
-  // width: 100%;
   margin: 0 auto;
   margin-top: -50px;
-  // border: 3px solid #B6B6B6;
-  // background-color: #B6B6B6;
   position: relative;
   text-align: center;
   z-index: -1;
@@ -287,11 +271,14 @@ $site_menu_width: 250px;
   font-size: 14px;
 }
 
+/* -------------------------- */
+/*         Color Rules
+/* -------------------------- */
+
 .color-rules-header {
-  // height: 40px;
   background-color: #E2E2E2;
   @include border-radius(10px 10px 0 0);
-  width: 175px;
+  width: 165px;
   position: absolute;
   top: 10px;
   text-align: center;
@@ -304,20 +291,23 @@ $site_menu_width: 250px;
 .color-rules  {
   background-color: #E2E2E2;
   @include border-radius(0 0 10px 10px);
-  width: 175px;
+  width: 165px;
   position: absolute;
   top: 50px;
 }
 
 .color-rule {
-  padding: 10px 0 10px 40px;
+  padding: 10px 0 0 30px;
+}
+
+.color-rule:last-child {
+  padding-bottom: 15px;
 }
 
 .color-rule-name  {
   font-size: 12px;
   color: #ACACAC;
   cursor: pointer;
-    // -moz-osx-font-smoothing: grayscale;
   transition-duration: 0.2s;
   transition-property: color;
   transition-timing-function: linear;
@@ -330,14 +320,3 @@ $site_menu_width: 250px;
 .selected-color-rule {
   color: #3F3F3F;
 }
-
-// top right bottom left
-
-// border-radius:top-left top-right bottom-right bottom-left
-
-
-
-
-
-
-

@@ -1,18 +1,27 @@
 angular.module( 'app' ).controller
-  colorsController: ($rootScope, $scope, $location) ->
+  colorsController: ($rootScope, $scope, $location, $localStorage) ->
+
+    initialize = () ->
+      $scope.menuOpen = false
+      $scope.pickedColor = 'rgba(252, 211, 66, 0)'
+      $scope.colorRule = 'analogous'
+      setRelatedColors()
+      if $localStorage.getObject('palettes') is null then $localStorage.set('palettes', '[]')
+      getPalettes()
+
 
     $scope.savePalette = () ->
       $scope.palettes.push $scope.colors
-      localStorage.setItem('palettes', JSON.stringify($scope.palettes))
+      $localStorage.setObject('palettes', $scope.palettes)
       $scope.menuOpen = true
 
     $scope.clearPalettes = () ->
-      localStorage.setItem('palettes','[]')
+      $localStorage.set('palettes', '[]')
       getPalettes()
       $scope.menuOpen = false
       
     getPalettes = () ->
-      $scope.palettes = JSON.parse(localStorage.getItem('palettes'))
+      $scope.palettes = $localStorage.getObject('palettes')
 
     $scope.toggleMenu = () ->
       $scope.menuOpen = !$scope.menuOpen
@@ -28,13 +37,12 @@ angular.module( 'app' ).controller
       @canvas.height = @img.height
       @canvas.getContext('2d').drawImage @img, 0, 0, @img.width, @img.height
       pixelData = @canvas.getContext('2d').getImageData($event.offsetX, $event.offsetY, 1, 1).data
-      if (pixelData[0] isnt 0) and (pixelData[1] isnt 0) and (pixelData[2] isnt 0) and (pixelData[3] isnt 0)
-        $scope.pickedColor = "rgba(#{pixelData[0]}, #{pixelData[1]}, #{pixelData[2]}, #{pixelData[3]})"
-        setRelatedColors($scope.pickedColor)
-        $('.selected-color').css('top', $event.offsetY - 12)
-        $('.selected-color').css('left', $event.offsetX - 15)
-        $scope.selectedColorOffsetY = ''
-        $scope.selectedColorOffsetX = ''
+      $scope.pickedColor = "rgba(#{pixelData[0]}, #{pixelData[1]}, #{pixelData[2]}, #{pixelData[3]})"
+      setRelatedColors($scope.pickedColor)
+      $('.selected-color-circle').css('top', $event.offsetY - 12)
+      $('.selected-color-circle').css('left', $event.offsetX - 15)
+      $scope.selectedColorOffsetY = ''
+      $scope.selectedColorOffsetX = ''
 
 
     setRelatedColors = () ->
@@ -60,12 +68,5 @@ angular.module( 'app' ).controller
         green: rgb.g
         blue: rgb.b
         alpha: rgb.a
-      
-    $scope.menuOpen = false
-    $scope.pickedColor = 'rgba(252, 211, 66, 0)'
-    $scope.colorRule = 'analogous'
-    setRelatedColors()
 
-    if localStorage.getItem('palettes') is null then localStorage.setItem('palettes', '[]')
-
-    getPalettes()
+    initialize()
